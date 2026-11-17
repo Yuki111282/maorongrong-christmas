@@ -2,20 +2,21 @@
 <html lang="zh-CN">
 <head>
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="theme-color" content="#050e19"><meta name="description" content="把星光挂满枝头，送给毛绒绒的圣诞祝福。">
-<title>毛绒绒圣诞快乐 · A little Christmas magic</title>
+<meta name="theme-color" content="#050e19"><meta name="description" content="把星光挂满枝头，送给亲爱的乖老婆的圣诞祝福。">
+<title>亲爱的乖老婆圣诞快乐 · A little Christmas magic</title>
 <style>
 :root{color-scheme:dark;--gold:#ead4a2;--muted:#8b9aab}*{box-sizing:border-box}body{margin:0;background:#050e19;color:#f5ead4;font-family:'Noto Serif SC','Songti SC','SimSun',serif;overflow:hidden}main{height:100svh;min-height:560px;position:relative;isolation:isolate;overflow:hidden;background:radial-gradient(ellipse at 50% 54%,#102b30 0, #091722 35%,#050e19 70%)}main:after{content:'';position:absolute;inset:15px;border:1px solid #cfbc8820;pointer-events:none;z-index:4}canvas{position:absolute;inset:0;width:100%;height:100%;touch-action:pan-y}header{position:absolute;left:7%;right:7%;top:38px;display:flex;justify-content:space-between;align-items:center;z-index:5;font-family:Georgia,serif;color:var(--gold);font-size:11px;letter-spacing:.25em}.brand{display:flex;gap:12px;align-items:center}.brand span{font-size:23px}.edition{color:#a1adba;font-size:10px}.greeting{position:absolute;top:12%;left:0;right:0;text-align:center;z-index:2;pointer-events:none}.eyebrow{font:10px Georgia,serif;letter-spacing:.45em;color:#b5b6a4;margin:0 0 17px}h1{font-weight:500;font-size:clamp(28px,4vw,48px);letter-spacing:.13em;margin:0;text-shadow:0 0 32px #efd69b35}h1 span{color:#efd3a0}.subtitle{font-size:12px;letter-spacing:.2em;color:#9faeb3;margin:15px 0 0}.script{position:absolute;top:45%;left:9%;font-style:italic;font-family:Georgia,serif;line-height:1.5;font-size:clamp(18px,2.4vw,32px);color:#d9caa587;transform:rotate(-8deg);pointer-events:none}.script small{display:block;font:9px Georgia,serif;letter-spacing:.2em;margin-top:18px;color:#8d9c9c}.right-note{position:absolute;right:9%;top:51%;writing-mode:vertical-rl;font-size:12px;letter-spacing:.4em;color:#c7bea580;pointer-events:none}.bottom{position:absolute;bottom:6%;left:0;right:0;z-index:5;display:flex;align-items:center;flex-direction:column;gap:16px}.wish{margin:0;color:#c8d0ca;font-size:12px;letter-spacing:.22em;min-height:22px;transition:opacity .3s}.controls{display:flex;gap:12px}button{border:1px solid #d8c08a5c;background:#13212ab3;color:#eddbb5;cursor:pointer;padding:11px 24px;border-radius:30px;font:12px 'Noto Serif SC','SimSun',serif;letter-spacing:.15em;backdrop-filter:blur(12px);transition:background .2s,transform .2s}button:hover{background:#344035;transform:translateY(-2px)}button:focus-visible{outline:2px solid #efd3a0;outline-offset:5px}.pause{padding:11px 15px;font-family:system-ui;font-size:12px;color:#b0bab9}.footer{position:absolute;bottom:27px;left:7%;right:7%;display:flex;justify-content:space-between;font:9px Georgia,serif;letter-spacing:.18em;color:#6e818b;z-index:4}.hint{position:absolute;top:72%;left:7%;font-size:10px;color:#7d959f;letter-spacing:.14em}.hint:before{content:'';display:inline-block;width:25px;height:1px;background:#7d959f;margin-right:10px;vertical-align:middle}@media(max-width:600px){header{top:29px;left:8%;right:8%}.edition{letter-spacing:.13em;font-size:8px}.greeting{top:13%}h1{font-size:29px;letter-spacing:.06em}.eyebrow{font-size:8px;letter-spacing:.3em}.subtitle{font-size:10px;letter-spacing:.1em}.script,.right-note,.hint{display:none}.bottom{bottom:8%;gap:12px}.wish{font-size:11px;letter-spacing:.09em}.footer{bottom:29px;font-size:7px}.controls button{font-size:11px}main:after{inset:10px}}@media(max-height:650px){.greeting{top:11%}.subtitle{margin-top:8px}.bottom{bottom:7%}.eyebrow{margin-bottom:9px}header{top:23px}.footer{bottom:20px}}@media(prefers-reduced-motion:reduce){button{transition:none}}
+@media(max-width:600px){h1{font-size:clamp(20px,7.2vw,29px);letter-spacing:.03em;padding:0 12px}.wish{max-width:calc(100% - 36px);text-align:center}}
 </style>
 </head>
 <body><main>
 <canvas id="scene" aria-label="由金色与绿色星光粒子组成的圣诞树，树顶星星闪耀，雪花缓缓飘落"></canvas>
 <header><div class="brand"><span>✧</span> CHRISTMAS</div><div class="edition">A LITTLE WINTER MAGIC</div></header>
-<section class="greeting"><p class="eyebrow">A CHRISTMAS WISH, JUST FOR YOU</p><h1>毛绒绒<span>圣诞快乐</span></h1><p class="subtitle">把星光挂满枝头，把温柔留给你。</p></section>
+<section class="greeting"><p class="eyebrow">A CHRISTMAS WISH, JUST FOR YOU</p><h1>亲爱的乖老婆<span>圣诞快乐</span></h1><p class="subtitle">把星光挂满枝头，把温柔留给你。</p></section>
 <div class="script">May your days<br>be merry & bright.<small>WITH LOVE, ALWAYS</small></div>
 <div class="right-note">愿你所遇皆暖 · 所念皆如愿</div><div class="hint">轻触夜空，落下星光</div>
 <div class="bottom"><p class="wish" id="wish" aria-live="polite">今夜的每一颗星，都在为你闪烁。</p><div class="controls"><button id="magic">✧ &nbsp; 收下一份圣诞魔法</button><button class="pause" id="pause" aria-label="暂停动画" aria-pressed="false">Ⅱ</button></div></div>
-<footer class="footer"><span>FOR 毛绒绒</span><span>PEACE · LOVE · A LITTLE MAGIC</span></footer>
+<footer class="footer"><span>FOR 亲爱的乖老婆</span><span>PEACE · LOVE · A LITTLE MAGIC</span></footer>
 </main>
 <script>
 'use strict';
@@ -50,7 +51,7 @@ function frame(now){const dt=Math.min((now-last)/1000||0,.04);last=now;if(!pause
 function start(){cancelAnimationFrame(raf);last=performance.now();if(!paused)raf=requestAnimationFrame(frame);else draw(0)}
 function explode(x,y,n=90){if(paused)return;for(let i=0;i<n;i++){const a=random(0,TAU),v=random(20,145);burst.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-25,life:random(.8,2.5),s:random(.6,2.4)})}if(burst.length>700)burst.splice(0,burst.length-700)}
 canvas.addEventListener('pointerdown',e=>explode(e.clientX,e.clientY));canvas.addEventListener('pointermove',e=>{pointer.x=(e.clientX/w-.5);pointer.y=(e.clientY/h-.5)});
-const wishes=['毛绒绒，愿你的冬天有暖阳，心里有星光。','愿所有的小美好，都如约来到你身边。','把这一整棵树的温柔，都送给你。','圣诞快乐，毛绒绒。你值得所有偏爱。'];let wishIndex=0;
+const wishes=['亲爱的乖老婆，愿你的冬天有暖阳，心里有星光。','愿所有的小美好，都如约来到你身边。','把这一整棵树的温柔，都送给你。','圣诞快乐，亲爱的乖老婆。你值得所有偏爱。'];let wishIndex=0;
 document.querySelector('#magic').addEventListener('click',()=>{document.querySelector('#wish').textContent=wishes[wishIndex++%wishes.length];const L=layout();explode(L.cx,L.top+L.th*.35,200);flare=1});
 const pause=document.querySelector('#pause');function updatePause(){pause.textContent=paused?'▷':'Ⅱ';pause.setAttribute('aria-label',paused?'播放动画':'暂停动画');pause.setAttribute('aria-pressed',String(paused))}pause.addEventListener('click',()=>{paused=!paused;updatePause();start()});reduced.addEventListener('change',e=>{paused=e.matches;updatePause();start()});document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else start()});addEventListener('resize',resize);resize();updatePause();start();
 </script></body></html>
