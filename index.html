@@ -12,11 +12,11 @@
 <body><main>
 <canvas id="scene" aria-label="由金色与绿色星光粒子组成的圣诞树，树顶星星闪耀，雪花缓缓飘落"></canvas>
 <header><div class="brand"><span>✧</span> CHRISTMAS</div><div class="edition">A LITTLE WINTER MAGIC</div></header>
-<section class="greeting"><p class="eyebrow">A CHRISTMAS WISH, JUST FOR YOU</p><h1>亲爱的乖老婆<span>圣诞快乐</span></h1><p class="subtitle">把星光挂满枝头，把温柔留给你。</p></section>
+<section class="greeting"><p class="eyebrow">A CHRISTMAS WISH, JUST FOR YOU</p><h1>亲爱的乖老婆<span>圣诞快乐</span></h1></section>
 <div class="script">May your days<br>be merry & bright.<small>WITH LOVE, ALWAYS</small></div>
 <div class="right-note">愿你所遇皆暖 · 所念皆如愿</div><div class="hint">轻触夜空，落下星光</div>
 <div class="bottom"><p class="wish" id="wish" aria-live="polite">今夜的每一颗星，都在为你闪烁。</p><div class="controls"><button id="magic">✧ &nbsp; 收下一份圣诞魔法</button><button class="pause" id="pause" aria-label="暂停动画" aria-pressed="false">Ⅱ</button></div></div>
-<footer class="footer"><span>FOR 亲爱的乖老婆</span><span>PEACE · LOVE · A LITTLE MAGIC</span></footer>
+<footer class="footer"><span>FOR 毛绒绒</span><span>PEACE · LOVE · A LITTLE MAGIC</span></footer>
 </main>
 <script>
 'use strict';
@@ -51,7 +51,7 @@ function frame(now){const dt=Math.min((now-last)/1000||0,.04);last=now;if(!pause
 function start(){cancelAnimationFrame(raf);last=performance.now();if(!paused)raf=requestAnimationFrame(frame);else draw(0)}
 function explode(x,y,n=90){if(paused)return;for(let i=0;i<n;i++){const a=random(0,TAU),v=random(20,145);burst.push({x,y,vx:Math.cos(a)*v,vy:Math.sin(a)*v-25,life:random(.8,2.5),s:random(.6,2.4)})}if(burst.length>700)burst.splice(0,burst.length-700)}
 canvas.addEventListener('pointerdown',e=>explode(e.clientX,e.clientY));canvas.addEventListener('pointermove',e=>{pointer.x=(e.clientX/w-.5);pointer.y=(e.clientY/h-.5)});
-const wishes=['亲爱的乖老婆，愿你的冬天有暖阳，心里有星光。','愿所有的小美好，都如约来到你身边。','把这一整棵树的温柔，都送给你。','圣诞快乐，亲爱的乖老婆。你值得所有偏爱。'];let wishIndex=0;
+const wishes=['亲爱的乖老婆，今年的圣诞我们也要一起过。','愿所有的小美好，都如约来到你身边。','把这一整棵树的温柔，都送给你。','圣诞快乐，亲爱的乖老婆。最爱你啦。'];let wishIndex=0;
 document.querySelector('#magic').addEventListener('click',()=>{document.querySelector('#wish').textContent=wishes[wishIndex++%wishes.length];const L=layout();explode(L.cx,L.top+L.th*.35,200);flare=1});
 const pause=document.querySelector('#pause');function updatePause(){pause.textContent=paused?'▷':'Ⅱ';pause.setAttribute('aria-label',paused?'播放动画':'暂停动画');pause.setAttribute('aria-pressed',String(paused))}pause.addEventListener('click',()=>{paused=!paused;updatePause();start()});reduced.addEventListener('change',e=>{paused=e.matches;updatePause();start()});document.addEventListener('visibilitychange',()=>{if(document.hidden)cancelAnimationFrame(raf);else start()});addEventListener('resize',resize);resize();updatePause();start();
 </script></body></html>
